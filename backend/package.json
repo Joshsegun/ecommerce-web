@@ -1,0 +1,15 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "E-commerce backend",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Oluwole Joshua",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
