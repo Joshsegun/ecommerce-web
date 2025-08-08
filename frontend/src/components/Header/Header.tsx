@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Search, ShoppingCart, User, Menu, X, Heart } from 'lucide-react';
-import { useCart } from '../../contexts/CartContext';
-import styles from './Header.module.css';
+import React, { useState, useEffect } from "react";
+import { Search, ShoppingCart, User, Menu, X, Heart } from "lucide-react";
+import { useCart } from "../../contexts/CartContext";
+import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const { state, toggleCart } = useCart();
 
   useEffect(() => {
@@ -14,20 +14,20 @@ const Header: React.FC = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#products', label: 'Products' },
-    { href: '#categories', label: 'Categories' },
-    { href: '#deals', label: 'Deals' },
-    { href: '#about', label: 'About' },
+    { href: "#home", label: "Home" },
+    { href: "#products", label: "Products" },
+    { href: "#categories", label: "Categories" },
+    { href: "#deals", label: "Deals" },
+    { href: "#about", label: "About" },
   ];
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <span className={styles.logoText}>ShopLux</span>
@@ -40,6 +40,7 @@ const Header: React.FC = () => {
             <Search size={20} className={styles.searchIcon} />
             <input
               type="text"
+              id="search"
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -67,13 +68,13 @@ const Header: React.FC = () => {
           <button className={styles.actionButton} aria-label="Wishlist">
             <Heart size={22} />
           </button>
-          
+
           <button className={styles.actionButton} aria-label="Account">
             <User size={22} />
           </button>
-          
-          <button 
-            className={styles.cartButton} 
+
+          <button
+            className={styles.cartButton}
             onClick={toggleCart}
             aria-label="Shopping Cart"
           >

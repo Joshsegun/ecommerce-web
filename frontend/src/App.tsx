@@ -1,10 +1,11 @@
-import React from 'react';
-import { CartProvider } from './contexts/CartContext';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import ProductGrid from './components/ProductGrid/ProductGrid';
-import Cart from './components/Cart/Cart';
-import styles from './App.module.css';
+import React from "react";
+import { CartProvider } from "./contexts/CartContext";
+import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
+import ProductGrid from "./components/ProductGrid/ProductGrid";
+import Cart from "./components/Cart/Cart";
+import styles from "./App.module.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           <Hero />
           <ProductGrid />
         </main>
+        <Footer />
+        {/* Cart Component */}
+        {/* This should be conditionally rendered based on cart state */}
         <Cart />
       </div>
     </CartProvider>
